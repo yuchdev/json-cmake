@@ -8,7 +8,7 @@ To clear created variables use macro `sbeClearJson`.
 
 ### Example
 
-You can play with test configuration provided example `CMakeLists.txt` and `release_notes.json`
+You can play with test configuration provided in example files `CMakeLists.txt` and `release_notes.json`
 
 JSON to parse:
 ``` [
