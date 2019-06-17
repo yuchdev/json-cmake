@@ -1,0 +1,31 @@
+[
+  {
+    "full_version": "",
+    "release_notes": {
+      "is_critical": true,
+      "application_version": 2,
+      "major_revision": 0,
+      "minor_revision": 0,
+      "build_number": 201917060,
+      "settings_version": 0,
+      "download_link": ""
+    }
+  },
+  {
+    "ticket": "PBWIN-100",
+    "release_notes": {
+      "whats_new": [
+        "Save erased file paths to encrypted database instead of text file"
+      ]
+    }
+  },
+  {
+    "ticket": "PBWIN-232",
+    "release_notes": {
+      "whats_new": [
+        "Use all CPU cores for files shredder"
+      ]
+    }
+  }
+]
+  
