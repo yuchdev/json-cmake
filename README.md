@@ -43,40 +43,43 @@ JSON to parse:
 ]
 ```
 
-Let assume that above JSON is stored in variable `${RELEASE_NOTES}` in CMake script. It can be parsed with following lines of code.
+1. Let's store JSON in a variable `${RELEASE_NOTES}` in CMake script. It can be parsed with following lines of code.
 ``` cmake
 include(JSONParser.cmake)
 ```
-# name of variable not string itself is passed to macro sbeParseJson
+
+2. Name of variable not string itself is passed to macro sbeParseJson
+
 ```
 file(READ release_notes.json RELEASE_NOTES)
 sbeParseJson(release_notes RELEASE_NOTES)
 ```
 
-# Now you can use parsed variables.
+3. Now you can use parsed variables.
+
 ```
 foreach(var ${example})
     message("${var} = ${${var}}")
 endforeach()
 ```
 
-# when you want to access concrete JSON object, use the names in JSON, the array indexes for JSON object MUST be given after '_'
-# e.g if you want to store value of object 'id' of first element of array 'items' in object 'menu'
+4. When you want to access concrete JSON object, use the names in JSON, the array indexes for JSON object MUST be given after '_'
+e.g if you want to store value of object 'id' of first element of array 'items' in object 'menu'
 ```
 set(MY_VERSION ${release_notes_0.release_notes.application_version})
 ```
 
-# e.g if you want to store 1-th element of array 'short' in object 'label' of 2-th element of array items in object menu 
+5. %.g if you want to store 1-th element of array 'short' in object 'label' of 2-th element of array items in object menu 
 ```
 set(ShortLabel ${example.menu.items_2.label.short_0})
 ```
 
-# When you are done, clean parsed variables
+6. When you are done, clean parsed variables
 ```
 sbeClearJson(example)
 ```
 
-Macro `sbeParseJson` creates following variables and its values (`variable name` = `value`).
+7. Macro `sbeParseJson` creates following variables and its values (`variable name` = `value`).
 ```
 release_notes_0.release_notes.application_version = 1
 release_notes_0.release_notes.major_revision = 0
