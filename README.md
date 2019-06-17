@@ -48,8 +48,7 @@ JSON to parse:
 include(JSONParser.cmake)
 ```
 
-2. Let's store JSON in a variable `${RELEASE_NOTES}` in CMake script. It can be parsed with following lines of code. Name of variable not string itself is passed to macro sbeParseJson
-
+2. Let's store JSON in a variable `${RELEASE_NOTES}` in CMake script. It can be parsed with following lines of code.
 ```
 file(READ release_notes.json RELEASE_NOTES)
 sbeParseJson(release_notes RELEASE_NOTES)
