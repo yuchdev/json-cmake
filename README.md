@@ -54,7 +54,7 @@ file(READ release_notes.json RELEASE_NOTES)
 sbeParseJson(release_notes RELEASE_NOTES)
 ```
 
-3. Now you can use parsed variables.
+3. Now you can enumerate parsed variables.
 
 ```
 foreach(var ${example})
@@ -63,14 +63,14 @@ endforeach()
 ```
 
 4. When you want to access concrete JSON object, use the names in JSON, the array indexes for JSON object MUST be given after '_'
-e.g if you want to store value of object 'id' of first element of array 'items' in object 'menu'
+In the other words, if you want to read value of object 'application_version' of first element of array 'release_notes'
 ```
 set(MY_VERSION ${release_notes_0.release_notes.application_version})
 ```
 
 5. %.g if you want to store 1-th element of array 'short' in object 'label' of 2-th element of array items in object menu 
 ```
-set(ShortLabel ${example.menu.items_2.label.short_0})
+set(ShortLabel ${release_notes_1.release_notes.settings_version})
 ```
 
 6. When you are done, clean parsed variables
